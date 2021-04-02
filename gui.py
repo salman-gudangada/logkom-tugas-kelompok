@@ -28,8 +28,8 @@ class QueenUI(QMainWindow):
         super().__init__()
         # Set some main window's properties
         self.setWindowTitle("Queen Square Solver And Validator")
-        self.setFixedSize(600, 800)
-        self.gridSize = 8
+        self.setFixedSize(600, 900)
+        self.gridSize = 10
         # Set the central widget and the general layout
         self.generalLayout = QVBoxLayout()
         self._centralWidget = QWidget(self)
@@ -78,18 +78,18 @@ class QueenUI(QMainWindow):
     def _createResultLabels(self):
         # Rules Label
         self.resultLabel = QtWidgets.QLabel(self._centralWidget)
-        self.resultLabel.setGeometry(QtCore.QRect(200, 720, 200, 100))
+        self.resultLabel.setGeometry(QtCore.QRect(200, 820, 200, 100))
         self.resultLabel.setText("")
 
     def _createBottomButtons(self):
         submitButton = QPushButton('Submit', self)
         submitButton.setToolTip('Submit your Queen Square')
-        submitButton.move(170,720)
+        submitButton.move(170,800)
         submitButton.clicked.connect(self.on_submit_click)
 
         resetButton = QPushButton('Reset', self)
         resetButton.setToolTip('Reset your Queen Square')
-        resetButton.move(280,720)
+        resetButton.move(280,800)
         resetButton.clicked.connect(self.on_reset_click)
 
     def _createLabels(self):
@@ -110,11 +110,11 @@ class QueenUI(QMainWindow):
 
         # Rules Label
         self.ruleLabel = QtWidgets.QLabel(self._centralWidget)
-        self.ruleLabel.setGeometry(QtCore.QRect(20, 630, 500, 100))
+        self.ruleLabel.setGeometry(QtCore.QRect(20, 700, 600, 100))
         self.ruleLabel.setText("Rules:\n1. Put your queen in the grid\n2. Submit and we can validate and show 1 of the solver for your 8-queen problem\n3. You can block some of the cell if you dont want that cell to be filled by queen")
 
     def _takeinputs(self):
-        self.noticeLabel.setText('Queen Square Succesfully Initialized with\nSize: ' + str(self.gridSize))
+        self.noticeLabel.setText('Queen Square Succesfully Initialized with size: ' + str(self.gridSize))
         self.pushButton.hide()
 
     def _createButtons(self):
