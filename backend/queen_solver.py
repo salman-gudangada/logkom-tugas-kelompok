@@ -123,18 +123,18 @@ def queen(mat):
                 rule.append(str(now) + " 0")
             elif mat[i][j] == 2:
                 rule.append("-" + str(now) + " 0")
-    
+    print(rule)
                 
-    f = open("backend\input.txt", "w")
+    f = open("backend/input.txt", "w")
     f.write("p cnf " + str(n * n) + " " + str(len(rule)) + "\n")
     for s in rule:
         f.write(s + "\n")
     f.close()
 
     import os
-    os.system("minisat backend\input.txt backend\output.txt")
+    os.system("minisat backend/input.txt backend/output.txt")
 
-    file_output = open("backend\output.txt", "r")
+    file_output = open("backend/output.txt", "r")
     verdict = file_output.readline()
 
     if verdict == "SAT\n":
