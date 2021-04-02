@@ -3,6 +3,7 @@ def construct_prerule(n):
     rule = []
     for i in range(n):
         grid.append([i * n + j + 1 for j in range(n)])
+    print(grid)
 
     # print(grid)
     # bikin rule horizontal
@@ -13,6 +14,7 @@ def construct_prerule(n):
         now = now + "0"
         rule.append(now)
 
+    print(rule)
     # bikin rule vertikal
     for j in range(n):
         now = ""
@@ -123,7 +125,7 @@ def queen(mat):
                 rule.append(str(now) + " 0")
             elif mat[i][j] == 2:
                 rule.append("-" + str(now) + " 0")
-    print(rule)
+    # print(rule)
                 
     f = open("backend/input.txt", "w")
     f.write("p cnf " + str(n * n) + " " + str(len(rule)) + "\n")

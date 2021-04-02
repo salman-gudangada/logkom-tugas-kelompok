@@ -28,7 +28,7 @@ class QueenUI(QMainWindow):
         super().__init__()
         # Set some main window's properties
         self.setWindowTitle("Queen Square Solver And Validator")
-        self.setFixedSize(600, 850)
+        self.setFixedSize(600, 900)
         self.gridSize = 10
         # Set the central widget and the general layout
         self.generalLayout = QVBoxLayout()
@@ -110,7 +110,7 @@ class QueenUI(QMainWindow):
 
         # Rules Label
         self.ruleLabel = QtWidgets.QLabel(self._centralWidget)
-        self.ruleLabel.setGeometry(QtCore.QRect(20, 700, 500, 100))
+        self.ruleLabel.setGeometry(QtCore.QRect(20, 700, 600, 100))
         self.ruleLabel.setText("Rules:\n1. Put your queen in the grid\n2. Submit and we can validate and show 1 of the solver for your 8-queen problem\n3. You can block some of the cell if you dont want that cell to be filled by queen")
 
     def _takeinputs(self):
